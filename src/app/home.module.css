@@ -1,0 +1,133 @@
+.landingBg {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f5f7fa 0%, #e4fd00 100%);
+  padding-bottom: 48px;
+}
+.heroAlt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 45vh;
+  padding-top: 48px;
+  padding-bottom: 32px;
+}
+.heroContentAlt {
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: 0 8px 32px #0002;
+  padding: 48px 32px 36px 32px;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+.sectionAlt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 220px;
+  margin: 0 auto 32px auto;
+}
+.sectionContentLeft, .sectionContentRight {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px #0001;
+  padding: 32px 40px;
+  max-width: 700px;
+  width: 100%;
+}
+.sectionContentLeft {
+  flex-direction: row;
+}
+.sectionContentRight {
+  flex-direction: row-reverse;
+}
+.sectionContentLeft h2, .sectionContentRight h2 {
+  font-size: 2rem;
+  color: #222;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.sectionContentLeft p, .sectionContentRight p {
+  color: #555;
+  font-size: 1.1rem;
+}
+.ctaSectionAlt {
+  background: linear-gradient(90deg, #e4fd00 0%, #f5f7fa 100%);
+  border-radius: 18px;
+  box-shadow: 0 2px 12px #0001;
+  padding: 36px 18px;
+  text-align: center;
+  margin: 48px auto 0 auto;
+  max-width: 600px;
+}
+.ctaSectionAlt h2 {
+  font-size: 2rem;
+  color: #222;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+.ctaPrimaryLarge {
+  background: #222;
+  color: #fff;
+  font-weight: 700;
+  padding: 18px 48px;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  text-decoration: none;
+  box-shadow: 0 2px 8px #0001;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-block;
+}
+.ctaPrimaryLarge:hover {
+  background: #fff;
+  color: #222;
+  transform: scale(1.07);
+  border: 2px solid #222;
+}
+@media (max-width: 900px) {
+  .sectionContentLeft, .sectionContentRight {
+    flex-direction: column !important;
+    gap: 18px;
+    padding: 24px 10px;
+  }
+  .heroContentAlt {
+    padding: 32px 10px 24px 10px;
+  }
+}
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #0001;
+  padding: 40px 32px;
+  text-align: center;
+}
+.title {
+  font-size: 2.5rem;
+  color: #3b3b3b;
+  margin-bottom: 16px;
+}
+.description {
+  color: #666;
+  font-size: 1.2rem;
+}
+.nav {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+.nav a {
+  color: #0070f3;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+.nav a:hover {
+  color: #0051a3;
+}

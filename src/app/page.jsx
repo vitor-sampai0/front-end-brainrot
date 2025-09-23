@@ -1,95 +1,75 @@
+
+
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "./home.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <div className={styles.landingBg}>
+      <section className={styles.heroAlt}>
+        <div className={styles.heroContentAlt}>
+          <Image src="/globe.svg" alt="Logo" width={90} height={90} className={styles.heroIcon} />
+          <h1 className={styles.title}>Steal a Brainrot</h1>
+          <p className={styles.subtitle}>
+            Descubra, explore e favorite brainrots únicos do universo Steal a Brainrot.<br/>
+            Uma experiência visual, divertida e feita para você!
+          </p>
+          <div className={styles.heroActions}>
+            <Link href="/bosses" className={styles.ctaPrimary}>Ver Brainrots</Link>
+            <Link href="/about" className={styles.ctaSecondary}>Sobre o Dev</Link>
+          </div>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Seção 1 - Esquerda */}
+      <section className={styles.sectionAlt}>
+        <div className={styles.sectionContentLeft}>
+          <Image src="/file.svg" alt="Listagem" width={70} height={70} />
+          <div>
+            <h2>Listagem Completa</h2>
+            <p>Veja todos os brainrots cadastrados, com imagens, raridade e detalhes.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Seção 2 - Direita */}
+      <section className={styles.sectionAlt}>
+        <div className={styles.sectionContentRight}>
+          <div>
+            <h2>Detalhes Ricos</h2>
+            <p>Abra cada brainrot e veja informações detalhadas, localização e descrição.</p>
+          </div>
+          <Image src="/window.svg" alt="Detalhes" width={70} height={70} />
+        </div>
+      </section>
+
+      {/* Seção 3 - Esquerda */}
+      <section className={styles.sectionAlt}>
+        <div className={styles.sectionContentLeft}>
+          <Image src="/vercel.svg" alt="Favoritos" width={70} height={70} />
+          <div>
+            <h2>Favoritos</h2>
+            <p>Marque brainrots favoritos e acesse rapidamente os seus preferidos.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Seção 4 - Direita */}
+      <section className={styles.sectionAlt}>
+        <div className={styles.sectionContentRight}>
+          <div>
+            <h2>Sobre o Dev</h2>
+            <p>Conheça quem desenvolveu o projeto e inspire-se para criar o seu!</p>
+          </div>
+          <Image src="/next.svg" alt="Sobre Mim" width={70} height={70} />
+        </div>
+      </section>
+
+      <section className={styles.ctaSectionAlt}>
+        <h2>Pronto para explorar?</h2>
+        <Link href="/bosses" className={styles.ctaPrimaryLarge}>Comece agora</Link>
+      </section>
     </div>
   );
 }
