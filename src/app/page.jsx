@@ -16,7 +16,7 @@ export default function Home() {
             Uma experiência visual, divertida e feita para você!
           </p>
           <div className={styles.heroActions}>
-            <Link href="/bosses" className={styles.ctaPrimary}>Ver Brainrots</Link>
+            <Link href="/brainrots" className={styles.ctaPrimary}>Ver Brainrots</Link>
             <Link href="/about" className={styles.ctaSecondary}>Sobre o Dev</Link>
           </div>
         </div>
@@ -68,7 +68,7 @@ export default function Home() {
 
       <section className={styles.ctaSectionAlt}>
         <h2>Pronto para explorar?</h2>
-        <Link href="/bosses" className={styles.ctaPrimaryLarge}>Comece agora</Link>
+        <Link href="/brainrots" className={styles.ctaPrimaryLarge}>Comece agora</Link>
       </section>
     </div>
   );

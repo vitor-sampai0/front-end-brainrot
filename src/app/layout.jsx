@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
               Steal a Brainrot
             </Link>
             <div className={styles.links}>
-              <Link href="/bosses">Listagem</Link>
+              <Link href="/brainrots">Brainrots</Link>
               <Link href="/favorites">Favoritos</Link>
               <Link href="/about">Sobre Mim</Link>
             </div>

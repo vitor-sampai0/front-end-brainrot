@@ -1,15 +1,17 @@
 .landingBg {
   min-height: 100vh;
-  background: linear-gradient(180deg, #f5f7fa 0%, #e4fd00 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
   padding-bottom: 48px;
+  animation: gradientShift 8s ease infinite;
 }
 .heroAlt {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 45vh;
-  padding-top: 48px;
-  padding-bottom: 32px;
+  min-height: 60vh;
+  padding: 80px 20px 60px;
+  animation: fadeInDown 1s ease-out;
+  position: relative;
 }
 .heroContentAlt {
   background: #fff;
@@ -87,6 +89,56 @@
   transform: scale(1.07);
   border: 2px solid #222;
 }
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); }
+  25% { background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #4facfe 100%); }
+  50% { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #667eea 100%); }
+  75% { background: linear-gradient(135deg, #764ba2 0%, #667eea 50%, #f093fb 100%); }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
 @media (max-width: 900px) {
   .sectionContentLeft, .sectionContentRight {
     flex-direction: column !important;

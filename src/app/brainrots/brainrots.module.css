@@ -1,0 +1,563 @@
+/* 🧠 BRAINROTS - CSS OTIMIZADO 🧠 */
+
+/* Variáveis CSS simples */
+:root {
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+  --accent-color: #f093fb;
+  --text-color: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.1);
+  --border-radius: 16px;
+  --transition: all 0.3s ease;
+}
+
+/* Container principal otimizado */
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Header simplificado */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.headerContent {
+  backdrop-filter: blur(10px);
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--text-color);
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0.5rem 0 0 0;
+  font-weight: 400;
+}
+
+/* Barra de estatísticas */
+.statsBar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.stat {
+  backdrop-filter: blur(10px);
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.stat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.statNumber {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Grid otimizado */
+.brainrotsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Cards com glass morphism leve */
+.brainrotCard {
+  backdrop-filter: blur(10px);
+  background: var(--card-bg) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: var(--border-radius) !important;
+  overflow: hidden !important;
+  transition: var(--transition) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.brainrotCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Container de imagem MELHORADO */
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+/* Botão de favoritar sobre a imagem */
+.imageContainer .favoriteButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+
+.imageContainer .favoriteButton:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.imageContainer .favoriteButton.favorited {
+  background: rgba(255, 107, 129, 0.9);
+  color: #fff;
+}
+
+.imageContainer .favoriteButton.favorited:hover {
+  background: rgba(255, 107, 129, 1);
+  transform: scale(1.1);
+}
+
+.cardImage {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  transition: var(--transition) !important;
+  filter: brightness(1.1) contrast(1.1) saturate(1.2);
+}
+
+.brainrotCard:hover .cardImage {
+  transform: scale(1.05);
+  filter: brightness(1.2) contrast(1.2) saturate(1.3);
+}
+
+/* Overlay sutil para melhorar a legibilidade */
+.imageContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  pointer-events: none;
+}
+
+/* Placeholder melhorado */
+.imagePlaceholder {
+  height: 220px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+  position: relative;
+}
+
+.imagePlaceholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 15px,
+    rgba(255, 255, 255, 0.1) 15px,
+    rgba(255, 255, 255, 0.1) 30px
+  );
+}
+
+/* Conteúdo do card */
+.cardContent {
+  padding: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+  color: white !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.4;
+}
+
+/* Estatísticas simplificadas */
+.cardStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.statItem {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 0.8rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.statItem:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.statLabel {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.statValue {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+}
+
+.cardMeta {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cardId {
+  background: rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Botão otimizado */
+.actionButton {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color)) !important;
+  border: none !important;
+  border-radius: 20px !important;
+  padding: 0.7rem 1.5rem !important;
+  font-weight: 600 !important;
+  transition: var(--transition) !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.actionButton:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Loading simples */
+.loadingWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+}
+
+.loadingText {
+  color: white;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+/* Paginação otimizada */
+.paginationWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.pagination {
+  backdrop-filter: blur(10px) !important;
+  background: var(--card-bg) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: var(--border-radius) !important;
+  padding: 1rem 1.5rem !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.pagination .ant-pagination-item {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px !important;
+  margin: 0 3px !important;
+  transition: var(--transition) !important;
+}
+
+.pagination .ant-pagination-item a {
+  color: white !important;
+  font-weight: 500 !important;
+}
+
+.pagination .ant-pagination-item:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.pagination .ant-pagination-item-active {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color)) !important;
+  border-color: transparent !important;
+}
+
+.pagination .ant-pagination-prev,
+.pagination .ant-pagination-next {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px !important;
+  transition: var(--transition) !important;
+}
+
+.pagination .ant-pagination-prev:hover,
+.pagination .ant-pagination-next:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .brainrotsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .headerContent {
+    padding: 1.5rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .cardStats {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+  
+  .cardContent {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .statNumber {
+    font-size: 1.5rem;
+  }
+}
+
+/* ===== ESTILOS ESPECÍFICOS PARA PÁGINA DE DETALHES ===== */
+
+.backButton {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.backButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.headerActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.favoriteButton {
+  background: rgba(255, 99, 132, 0.2);
+  border: 1px solid rgba(255, 99, 132, 0.5);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.favoriteButton:hover {
+  background: rgba(255, 99, 132, 0.3);
+  border-color: rgba(255, 99, 132, 0.7);
+  color: white;
+}
+
+.favoriteButton.favorited {
+  background: rgba(255, 99, 132, 0.4);
+  border-color: rgba(255, 99, 132, 0.8);
+}
+
+.editButton {
+  background: rgba(76, 175, 80, 0.2);
+  border: 1px solid rgba(76, 175, 80, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.editButton:hover {
+  background: rgba(76, 175, 80, 0.3);
+  border-color: rgba(76, 175, 80, 0.7);
+}
+
+.contentWrapper {
+  display: grid;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mainCard {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.brainrotHeader {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.brainrotImage {
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.brainrotInfo {
+  color: white;
+}
+
+.brainrotName {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 1rem 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.detailCard {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.detailCard .ant-card-head {
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.detailCard .ant-card-head-title {
+  color: white;
+  font-weight: 600;
+}
+
+.detailCard .ant-descriptions-item-label {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+.detailCard .ant-descriptions-item-content {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.detailCard .ant-descriptions-bordered .ant-descriptions-item {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsividade para página de detalhes */
+@media (max-width: 768px) {
+  .brainrotHeader {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .brainrotName {
+    font-size: 2rem;
+  }
+  
+  .headerActions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
