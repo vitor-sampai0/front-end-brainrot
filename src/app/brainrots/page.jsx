@@ -49,20 +49,46 @@ export default function BrainrotsPage() {
       // Carregar da API
       let apiData = [];
       try {
+        console.log("Tentando conectar com a API...");
         const response = await axios.get("http://localhost:4000/brainrot");
-        apiData = (response.data || []).map(item => ({
+        console.log("Resposta da API:", response.data);
+        
+        // Verificar se a resposta tem dados
+        const dataArray = Array.isArray(response.data) ? response.data : response.data.data || [];
+        
+        apiData = dataArray.map(item => ({
           ...item,
           isFromAPI: true,
           userCreated: false,
           id: `api_${item.id}`,
         }));
+        
         setApiBrainrots(apiData);
-      } catch {
+        console.log(`${apiData.length} brainrots carregados da API`);
+        
+        if (apiData.length > 0) {
+          message.success(`${apiData.length} brainrots carregados da API!`);
+        }
+      } catch (error) {
+        console.error("Erro ao conectar com a API:", error);
         message.warning("API não disponível - mostrando apenas brainrots locais");
         setApiBrainrots([]);
       }
+
+      // Carregar do localStorage
+      let localData = brainrotStorage.getAll().map(item => ({
+        ...item,
+        isFromAPI: false,
+        userCreated: true,
+        id: `local_${item.id}`,
+      }));
+      setLocalBrainrots(localData);
+      console.log(`${localData.length} brainrots locais carregados`);
+
+      // Juntar
       const combined = [...apiData, ...localData];
       setBrainrots(combined);
+      console.log(`Total de ${combined.length} brainrots disponíveis`);
 
     } catch (error) {
       console.error("Erro ao buscar brainrots:", error);
@@ -219,7 +245,7 @@ export default function BrainrotsPage() {
       <div className={styles.header}>
         <div className={styles.headerContent}>
           <h1 className={styles.title}>Brainrots Collection</h1>
-          <p className={styles.subtitle}>Utilizando API Própria</p>
+          <p className={styles.subtitle}>API + Dados Locais</p>
         </div>
         <div className={styles.headerActions}>
           <Dropdown
