@@ -169,8 +169,8 @@ export default function BrainrotDetailsPage({ params }) {
               <Image
                 src={brainrot.img_1}
                 alt={brainrot.name}
-                width={400}
-                height={300}
+                width={300}
+                height={400}
                 className={styles.brainrotImage}
               />
             ) : (

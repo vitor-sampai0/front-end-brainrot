@@ -49,9 +49,9 @@
   font-weight: 400;
 }
 
-/* Barra de estatísticas */
 .statsBar {
   display: flex;
+  gap: 1.5rem;
   justify-content: center;
   margin-bottom: 2rem;
 }

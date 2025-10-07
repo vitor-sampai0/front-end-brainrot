@@ -19,7 +19,6 @@ import styles from "./brainrots.module.css";
 
 // Importações das funções de storage
 import { brainrotStorage, favoritesStorage } from "@/hooks/useLocalStorage";
-import { exportData, importData, initializeSampleData } from "@/utils/sampleData";
 
 export default function BrainrotsPage() {
   const [brainrots, setBrainrots] = useState([]);
@@ -62,17 +61,6 @@ export default function BrainrotsPage() {
         message.warning("API não disponível - mostrando apenas brainrots locais");
         setApiBrainrots([]);
       }
-
-      // Carregar do localStorage
-      let localData = brainrotStorage.getAll().map(item => ({
-        ...item,
-        isFromAPI: false,
-        userCreated: true,
-        id: `local_${item.id}`,
-      }));
-      setLocalBrainrots(localData);
-
-      // Juntar
       const combined = [...apiData, ...localData];
       setBrainrots(combined);
 
@@ -231,7 +219,7 @@ export default function BrainrotsPage() {
       <div className={styles.header}>
         <div className={styles.headerContent}>
           <h1 className={styles.title}>Brainrots Collection</h1>
-          <p className={styles.subtitle}>API + Seus Brainrots</p>
+          <p className={styles.subtitle}>Utilizando API Própria</p>
         </div>
         <div className={styles.headerActions}>
           <Dropdown
@@ -260,10 +248,6 @@ export default function BrainrotsPage() {
         <div className={styles.stat}>
           <span className={styles.statNumber}>{apiBrainrots.length}</span>
           <span className={styles.statLabel}>Da API</span>
-        </div>
-        <div className={styles.stat}>
-          <span className={styles.statNumber}>{localBrainrots.length}</span>
-          <span className={styles.statLabel}>Seus</span>
         </div>
         <div className={styles.stat}>
           <span className={styles.statNumber}>{favorites.length}</span>
